@@ -1,5 +1,7 @@
 # Docker
+Image is the Hardcopy of the docker container which we pull from the device 
 
+<<<<<<< HEAD
 ## Docker commands
 
 - docker images -> to get all the images 
@@ -39,3 +41,10 @@ So when both the containers are in the same network then , so can directly use t
 for connection 
 
 when we run the containers , if we get into the documentation then see there are **Enviroment variabls ** that we need to set
+=======
+Container is the Running abstracted process and runs above the Docker Engine in the OS
+
+ Docker commands
+
+- docker images -> to get the total images which are install in the local system 
+>>>>>>> a9d7ad57980d6e3c253d173cd62993cea91e0f60
