@@ -2,6 +2,7 @@
 Image is the Hardcopy of the docker container which we pull from the device 
 
 <<<<<<< HEAD
+
 ## Docker commands
 
 - docker images -> to get all the images 

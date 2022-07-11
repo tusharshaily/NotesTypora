@@ -1,4 +1,12 @@
-This is macbook part 
+There are three stages in git - > working tree , staging area and git directory. 
+
+- Working tree represents the place where we are making changes to our file
+- We can use **git status** ,what all are things that are included inside the working tree
+- To add files in working tree , we use **git add FILENAME**
+- To commit we use either **git commit** , Here it will open text editor to write commit messages 
+- Or you can use the short cut **git commit -m "YOUR MESSAGE"**  
+
+To add any file working 
 
 We cannot commit without any commit message
 
@@ -30,3 +38,51 @@ Deleting and renaming
 
 Telling git to ignore some files , we use .gitignore file
 
+## Week 2
+
+Here there is one method "checkout" is used to undo the changes in the file that are not added{Stage}. 
+
+*git checkout filename* 	this will undo all the changes 
+
+If you want to reset the added files. then we use 	*git reset HEAD FILENAME*
+
+### Amending the previous commit
+
+Here while doing the commit we have made some mistake. Then in that case, we have the option to over write the resent commit by using **git commit --ammend** Avoid amending commits for public repo
+
+### Roll backing the commits
+
+Here we can  actually undo all the changes in the commit and added as a new commit 
+
+If you want to roll back the latest commit use -. **git revert HEAD** 
+
+and if you want to roll back any particular commit then -> **git revert COMMITID*
+
+### Git branches and Merge Conflicts
+
+Here to introduce the branch we use **git branch BRNACHNAME**
+
+to go into that branch we use **git checkout branchname**
+
+Here is we want to create new branch and move to it then use : **git checkout -b BRANCHNAME**
+
+---
+
+if you want to merge the branches then go to parent branch , then use git merge BRANCHNAME
+
+| git branch                | used to see the branch      |
+| ------------------------- | --------------------------- |
+| git brach NAME            | to create a new branch      |
+| git branch -d NAME        | to delete the branch        |
+| git branch -D NAME        | forcibly deletes the branch |
+| git checkout BNAME        |                             |
+| git checkout -b BNAME     |                             |
+| git merge branch          |                             |
+| git log --graph-- oneline |                             |
+|                           |                             |
+
+## Week 3
+
+to save the credentials we can use the credential helper =>**git config --global credential.helper cache**
+
+This will store the password
