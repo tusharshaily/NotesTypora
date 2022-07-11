@@ -70,19 +70,82 @@ Here is we want to create new branch and move to it then use : **git checkout -b
 
 if you want to merge the branches then go to parent branch , then use git merge BRANCHNAME
 
-| git branch                | used to see the branch      |
-| ------------------------- | --------------------------- |
-| git brach NAME            | to create a new branch      |
-| git branch -d NAME        | to delete the branch        |
-| git branch -D NAME        | forcibly deletes the branch |
-| git checkout BNAME        |                             |
-| git checkout -b BNAME     |                             |
-| git merge branch          |                             |
-| git log --graph-- oneline |                             |
-|                           |                             |
+| git branch                | used to see the branch        |
+| ------------------------- | ----------------------------- |
+| git brach NAME            | to create a new branch        |
+| git branch -d NAME        | to delete the branch          |
+| git branch -D NAME        | forcibly deletes the branch   |
+| git checkout BNAME        |                               |
+| git checkout -b BNAME     |                               |
+| git merge master          |                               |
+| git log --graph-- oneline |                               |
+| git branch -r             | to look for the remote branch |
+
+to merge any branch into branch2, first we want to go that branch and latter  use git merge branch2
+
+shortcut -> git merge branch main
 
 ## Week 3
 
 to save the credentials we can use the credential helper =>**git config --global credential.helper cache**
 
 This will store the password
+
+Here the remote repo is named origin by default
+
+**git fetch fetches the remote updates but doesnt merge , git pull fetches the remote update and merges .**
+
+so if there is merge conflicts in the our local with the remote , we can use the git fetch and the manually merge that
+
+if we want to update all the remote branches locally without merging with the local branches then , we can call **git remote update**
+
+| Command              | Explanation & Links                                          |
+| :------------------- | :----------------------------------------------------------- |
+| git remote           | [Lists remote repos](https://git-scm.com/docs/git-remote)    |
+| git remote -v        | [List remote repos verbosely](https://git-scm.com/docs/git-remote#Documentation/git-remote.txt--v) |
+| git remote show NAME | [Describes a single remote repo](https://git-scm.com/docs/git-remote#Documentation/git-remote.txt-emshowem) |
+| git remote update    | [Fetches the most up-to-date objects](https://git-scm.com/docs/git-remote#Documentation/git-remote.txt-emupdateem) |
+| git fetch            | [Downloads specific objects](https://git-scm.com/docs/git-fetch) |
+| git branch -r        | [Lists remote branches](https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--r); can be combined with other branch arguments to manage remote branches |
+
+If we want to push a local branch to the remote repository then we can use this command 
+
+**git push -u origin BRANCH**
+
+Here origin is refer to the remote repo, -u => refer to upstream, the Branch is the name of the local branch
+
+## Git merge
+
+Merging refers to add changes from other branches to my current branch , Here if we want to add changes of BRANCH1 to BRANCH2
+
+the first we got to branch2 , then we merge  changes of BRANCH1
+
+```bash
+git checkout BRANCH2
+# now i am inside the BRANCH2 , then i will merge changes of BRNACH1 to my current BRANCH
+git merge BRANCH1
+```
+
+ 
+
+Note: if you are working in a feature branch always try to merge changes of main to feature , so that when you finally added the feature branch to main , there are less conflicts 
+
+
+
+## Git Rebase
+
+git rebase is alternate of git merge , Rebasing instead of merging rewrites history and maintain linear commits , making code history clean.
+
+Here is what git Merge is :
+
+![image-20220711232026921](/home/tushar/.config/Typora/typora-user-images/image-20220711232026921.png)
+
+ 
+
+Here is what git rebase is:
+
+![image-20220711232128062](/home/tushar/.config/Typora/typora-user-images/image-20220711232128062.png)
+
+
+
+As you can see , the git rebase actually move the whole feature branch and moved in front of main branch , this leads like a single linera commit history  
